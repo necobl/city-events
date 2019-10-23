@@ -1,32 +1,23 @@
 import { Injectable } from '@angular/core';
-import { User } from '../model/user.model';
 import { Router } from '@angular/router';
+import {UserService} from '../../core/services/user.service';
+import {AppUser} from '../../core/models/app-user.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  private users: Array<User> = [];
-  public activeUser: User;
-  public signedIn: boolean = false;
+  public activeUser: AppUser;
+  public signedIn: boolean;
 
-  constructor(private router: Router) {
-    //testni podaci
-    this.users.push(new User("Ime 1", "Prezime 1", "user1", "pass1"));
-    this.users.push(new User("Ime 2", "Prezime 2", "user2", "pass2"));
-    this.users.push(new User("Ime 3", "Prezime 3", "user3", "pass3"));
+  constructor(private router: Router,
+              private userService: UserService) {
   }
 
   public login(username: string, password: string): boolean {
-    let result = false;
-    this.activeUser = null;
-    this.users.forEach(user => {
-      if (user.username == username && user.password == password) {
-        result = true;
-        this.activeUser = user;
-      }
-    })
+    this.activeUser = this.userService.findUserByUsernameAndPassword(username, password);
+    const result: boolean = !!this.activeUser;
     this.signedIn = result;
     return result;
   }

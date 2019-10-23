@@ -34,4 +34,18 @@ export class UserService {
       this.users.push(new AppUser(item));
     });
   }
+
+  public findUserByUsernameAndPassword(username: string, password: string): AppUser {
+    let user: AppUser = null;
+    this.users.forEach(item => {
+      if (user.username === username && user.password === password) {
+        user = item;
+      }
+    });
+    return user;
+  }
+
+  public getUsers() {
+    return this.users;
+  }
 }
