@@ -42,7 +42,7 @@ export class EventManageComponent implements OnInit {
     if (valid) { // ako su OK
 
       if (this.isEdit) {
-
+        this.service.editEvent(value);
       } else {
         this.service.addEvent(value); // koristimo nas servis da ih sacuvamo
       }

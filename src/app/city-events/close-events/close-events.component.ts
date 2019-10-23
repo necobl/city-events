@@ -27,7 +27,7 @@ export class CloseEventsComponent implements OnInit {
   }
 
   save() {
-    this.service.completeEvents(this.event.name);
+    this.service.deleteEvent(this.event.id);
     this.close();
   }
 

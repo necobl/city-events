@@ -19,8 +19,7 @@ export class CityEventsService {
     }
   }
 
-  public addEvent(cityEvent: CityEvent) {
-    this.cityEvents.push(cityEvent);
+  private save() {
     this.localStorageService.save(this.STORAGE_KEY, JSON.stringify(this.cityEvents));
   }
 
@@ -28,30 +27,33 @@ export class CityEventsService {
     return this.cityEvents;
   }
 
-  /*private loadFromLocalStorage() {
-    this.data = JSON.parse(localStorage.getItem(this.STORAGE_KEY)) || [];
-    this.data.forEach(t => {
-      t.dueDate = new Date(t.dueDate);
-    });
-  }*/
-
-  /*public getActiveEvents() {
-    return this.getEvents().filter(e => e.active);
+  public addEvent(cityEvent: CityEvent) {
+    this.cityEvents.push(cityEvent);
+    this.save();
   }
 
-  public getInactiveEvents() {
-    return this.getEvents().filter(e => !e.active);
-  }*/
-
-
-  public completeEvents(name: string) {
-    /*this.data.forEach(t => {
-      if (t.name == name) {
-        t.active = false;
+  public editEvent(cityEvent: CityEvent) {
+    this.cityEvents.forEach((event) => {
+      if (event.id === cityEvent.id) {
+        Object.assign(event, cityEvent);
       }
     });
-    this.saveToLocalStorage();*/
+    this.save();
   }
+
+  public deleteEvent(id: string) {
+    let index = null;
+    this.cityEvents.forEach((event, i) => {
+      if (event.id === id) {
+        index = i;
+      }
+    });
+    if (index !== null) {
+      this.cityEvents.splice(index, 1);
+      this.save();
+    }
+  }
+
 
   private seedCityEvents() {
     this.cityEvents = this.cityEvents || [];
@@ -76,7 +78,7 @@ export class CityEventsService {
       items.forEach((item) => {
         this.cityEvents.push(new CityEvent(item));
       });
-      this.localStorageService.save(this.STORAGE_KEY, JSON.stringify(this.cityEvents));
+      this.save();
     }
   }
 }
