@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatTableDataSource, MatSort, MatDialog} from '@angular/material';
 import {CityEventsService} from 'src/app/city-events/services/city-events.service';
-import {EventsCreateComponent} from '../events-create/events-create.component';
+import {EventManageComponent} from '../event-manage/event-manage.component';
 import {CloseEventsComponent} from '../close-events/close-events.component';
 import {CityEvent} from '../../core/models/city-event.model';
 
@@ -12,7 +12,7 @@ import {CityEvent} from '../../core/models/city-event.model';
 })
 export class EventsListComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'description', 'eventDate', 'time', 'delete'];
+  displayedColumns: string[] = ['name', 'description', 'eventDate', 'time', 'edit', 'delete'];
   dataSource = new MatTableDataSource<CityEvent>();
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
@@ -22,17 +22,34 @@ export class EventsListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dataSource.data = this.service.getEvents();
+    this.loadCityEvents();
     this.dataSource.sort = this.sort;
   }
 
+  loadCityEvents() {
+    this.dataSource.data = this.service.getEvents();
+  }
+
   addEvent() {
-    this.dialog.open(EventsCreateComponent, {
+    this.dialog.open(EventManageComponent, {
       width: '600px'
     })
       .afterClosed()
       .subscribe(result => {
-        this.dataSource.data = this.service.getEvents();
+        this.loadCityEvents();
+      });
+  }
+
+  editEvent(cityEvent) {
+    this.dialog.open(EventManageComponent, {
+      width: '600px',
+      data: {
+        cityEvent: cityEvent
+      }
+    })
+      .afterClosed()
+      .subscribe(result => {
+        this.loadCityEvents();
       });
   }
 
@@ -46,7 +63,7 @@ export class EventsListComponent implements OnInit {
     })
       .afterClosed()
       .subscribe(result => {
-        this.dataSource.data = this.service.getEvents();
+        this.loadCityEvents();
       });
   }
 

@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {CloseEventsComponent} from './close-events/close-events.component';
 import {EventCardComponent} from './event-card/event-card.component';
 import {CityEventsService} from './services/city-events.service';
-import {EventsCreateComponent} from './events-create/events-create.component';
+import {EventManageComponent} from './event-manage/event-manage.component';
 import {EventsListComponent} from './events-list/events-list.component';
 import {CityEventsCategoryService} from './services/city-events-category.service';
 
@@ -14,12 +14,12 @@ import {CityEventsCategoryService} from './services/city-events-category.service
   declarations: [
     CloseEventsComponent,
     EventCardComponent,
-    EventsCreateComponent,
+    EventManageComponent,
     EventsListComponent
   ],
   entryComponents: [
     CloseEventsComponent,
-    EventsCreateComponent
+    EventManageComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +30,7 @@ import {CityEventsCategoryService} from './services/city-events-category.service
   exports: [
     CloseEventsComponent,
     EventCardComponent,
-    EventsCreateComponent
+    EventManageComponent
   ],
   providers: [CityEventsService, CityEventsCategoryService]
 })
