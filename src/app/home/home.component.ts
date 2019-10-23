@@ -15,7 +15,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.cityEvents = this.cityEventsService.getEvents();
-    console.log('sdasd', this.cityEvents)
   }
 
 }

@@ -1,17 +1,17 @@
 <mat-card class="event-card">
-    <mat-card-header>
-      <div mat-card-avatar class="event-header-image"></div>
-      <mat-card-title>{{cityEvent?.name}}</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="https://banjaluka.net/wp-content/uploads/2017/02/srdjan-vujmilovic-banjaluka-1024x681.png" alt="Banja Luka">
-    <mat-card-content>
-      <p>
-        {{cityEvent?.description}}
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <p>{{cityEvent?.eventDate | date:'dd.MM.yyyy'}}</p>
-      <p>{{cityEvent?.eventDate}}</p>
-    </mat-card-actions>
-  </mat-card>
+  <mat-card-header>
+    <div mat-card-avatar class="event-header-image"></div>
+    <mat-card-title>{{cityEvent?.name}}</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src='{{cityEvent?.imageUrl}}' alt="Banja Luka">
+  <mat-card-content>
+    <p>
+      {{cityEvent?.description}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <p>{{cityEvent?.eventDate | date:'dd.MM.yyyy'}}</p>
+    <p>{{cityEvent?.eventDate}}</p>
+  </mat-card-actions>
+</mat-card>

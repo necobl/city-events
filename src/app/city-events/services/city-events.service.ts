@@ -64,7 +64,7 @@ export class CityEventsService {
           categoryId: category.id,
           description: 'test test test',
           eventDate: new Date(Date.now() + 86400000),
-          image_url: 'https://r3.whistleout.com/public/images/articles/2016/12/NEWYORKCITY.jpg'
+          imageUrl: 'https://r3.whistleout.com/public/images/articles/2016/12/NEWYORKCITY.jpg'
         },
         {
           name: 'Test event 2',
@@ -74,7 +74,7 @@ export class CityEventsService {
         }
       ];
       items.forEach((item) => {
-        this.cityEvents.push(item);
+        this.cityEvents.push(new CityEvent(item));
       });
       this.localStorageService.save(this.STORAGE_KEY, JSON.stringify(this.cityEvents));
     }
