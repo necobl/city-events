@@ -1,0 +1,15 @@
+.link {
+    padding: 8px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: #d74b4b;
+}
+
+.title {    
+    display: flex;
+    flex-grow: 1;
+    color: #d74b4b;
+}

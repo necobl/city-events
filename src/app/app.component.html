@@ -1,0 +1,36 @@
+<mat-toolbar>
+  <mat-toolbar-row class="mat-toolbar-row">
+
+    <button mat-icon-button  (click)="toggleMenu()" class="toogle-button">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a mat-raised-button class="right-button" routerLink="/auth">Prijavi se</a>
+    <h3 class="app-title">ITP 100</h3>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container class="app-container">
+  <mat-sidenav [(opened)]="opened" mode="side" class="menu-container">
+
+    <mat-list class="menu">
+      <mat-list-item class="menu-item" routerLink="/dashboard">
+        <mat-icon mat-list-icon>home</mat-icon>
+        <p>Početna</p>
+      </mat-list-item>
+      <mat-list-item class="menu-item" routerLink="/events">
+        <mat-icon mat-list-icon>notes</mat-icon>
+        <p>Događaji</p>
+      </mat-list-item>
+      
+      <mat-list-item class="menu-item" routerLink="/">
+        <mat-icon mat-list-icon>image</mat-icon>
+        <p>Galerija</p>
+      </mat-list-item>
+
+
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

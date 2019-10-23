@@ -1,0 +1,47 @@
+.app-container {
+    position: absolute;
+    top: 64px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.mat-toolbar-row{
+    background-color: royalblue;
+}
+
+.menu-container {
+    width: 200px;
+}
+
+.app-title{
+    padding-left: 16px; 
+    color: white;
+}
+
+.menu {
+    height: calc(100vh - 72px);
+    padding-top: 0;
+}
+
+.menu-item {
+    color: black !important;
+    padding-top: 8px;
+}
+
+.menu-item:hover {
+    background-color: rgb(111, 105, 126);
+    color: white !important;
+    cursor: pointer;
+}
+
+.right-button {
+    position: absolute;
+    right: 8px;
+
+}
+.toogle-button{
+    color: white;
+    
+
+}
