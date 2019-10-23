@@ -1,0 +1,25 @@
+ITP100 - 2019
+Projektni zadatak
+Napraviti web aplikaciju za upravljanje događajima u gradu upotrebom Angular framework-a.
+Aplikacija ima 2 dijela:
+ dio za korisnike i
+ dio za administratora aplikacije.
+Dio za korisnike predstavlja početnu stranicu na kojoj se nalaze sljedeće informacije:
+ događaji koji su po rasporedu taj dan,
+ najave događaja (bez vremenskog ograničenja u budućnosti, a ne prikazuju se događaji koji
+su prošli),
+ filtriranje događaja po kategoriji.
+Osim toga, početna stranica ima prostor za reklamiranje koji se može proizvoljno organizovati i
+prikaz trenutne temperature i vremenske prognoze u gradu (koristiti neki gotov API za dobijanje
+vremenske prognoze). Dodati još neki sadržaj ili stranice koje poboljšavaju funkcionalnost aplikacije
+(opšte informacije, galerija, ...).
+Dio za administratore predstavlja zaštićeni dio aplikacije gdje se administratori trebaju prijaviti da bi
+pristupili. Listu korisničkih imena i lozinke administratora čuvati u aplikaciji (može biti definisano u
+nekom servisu). Na početnoj stranici treba da se nalazi link prema stranici za prijavu gdje
+administratori unose podatke. Ako su podaci ispravni, otvara se stranica za tabelarni pregled
+događaja sa opcijama za sortiranje, dodavanje novih događaja i brisanje postojećih događaja. Svaki
+događaj mora imati naslov, opis, može imati sliku (URL) i ima datum i vrijeme, a obavezno se bira
+kategorija događaja iz padajuće liste. Administratori imaju i stranicu za tabelarni prikaz kategorija
+događaja i opciju za kreiranje nove kategorije i izmjenu postojeće kategorije.
+Dozvoljeno je proširiti funkcionalnosti i sadržaj aplikacija.
+Sve podatke čuvati lokalno u aplikaciji u localStorage-u.
