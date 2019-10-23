@@ -13,11 +13,11 @@ const routes: Routes = [
         path: '',
         component: HomeComponent
       },
-      /*{
-    patch: 'admin',
-    loadChildren: () => import('./user/user.module').then(mod => mod.UserModule),
-    canActivate: [AuthGuardService]
-  }*/
+      {
+        path: 'admin',
+        loadChildren: () => import('../admin/admin.module').then(mod => mod.AdminModule),
+        canActivate: [AuthGuardService]
+      }
     ]
   }
 

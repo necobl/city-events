@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { LoginService } from '../services/login.service';
-import { Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material';
+import {Component, OnInit} from '@angular/core';
+import {FormGroup, FormBuilder, Validators} from '@angular/forms';
+import {LoginService} from '../services/login.service';
+import {Router} from '@angular/router';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-login',
@@ -14,9 +14,9 @@ export class LoginComponent implements OnInit {
   public form: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
-    private loginService: LoginService,
-    private router: Router,
-    private snackBar: MatSnackBar) { 
+              private loginService: LoginService,
+              private router: Router,
+              private snackBar: MatSnackBar) {
 
   }
 
@@ -27,11 +27,11 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  public login({value, valid}){
-    if(this.loginService.login(value.username, value.password)){
-      this.router.navigate(['users', 'list']);
+  public login({value, valid}) {
+    if (this.loginService.login(value.username, value.password)) {
+      this.router.navigate(['admin']);
     } else {
-      this.snackBar.open("Podaci nisu tacni", null, {
+      this.snackBar.open('Podaci nisu tacni', null, {
         duration: 2000
       });
     }

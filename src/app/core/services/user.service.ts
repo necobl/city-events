@@ -38,7 +38,7 @@ export class UserService {
   public findUserByUsernameAndPassword(username: string, password: string): AppUser {
     let user: AppUser = null;
     this.users.forEach(item => {
-      if (user.username === username && user.password === password) {
+      if (item.username === username && item.password === password) {
         user = item;
       }
     });
