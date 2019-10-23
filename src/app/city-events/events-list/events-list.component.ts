@@ -12,7 +12,7 @@ import {CityEvent} from '../../core/models/city-event.model';
 })
 export class EventsListComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'description', 'eventDate', 'close', 'delete'];
+  displayedColumns: string[] = ['name', 'description', 'eventDate', 'time', 'delete'];
   dataSource = new MatTableDataSource<CityEvent>();
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
