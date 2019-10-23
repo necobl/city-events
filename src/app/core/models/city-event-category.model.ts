@@ -1,7 +1,7 @@
 import {UtilService} from '../services/util.service';
 
 export class CityEventCategory {
-  id: string;
+  id?: string;
   name: string;
 
   constructor(values?: any) {

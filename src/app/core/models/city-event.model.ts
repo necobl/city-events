@@ -2,14 +2,14 @@ import {UtilService} from '../services/util.service';
 import {CityEventCategory} from './city-event-category.model';
 
 export class CityEvent {
-  id: string;
+  id?: string;
   categoryId: string;
   // category: CityEventCategory;
   name: string;
-  description: string;
+  description?: string;
   eventDate: Date;
-  imageUrl: string;
-  finished: boolean;
+  imageUrl?: string;
+  finished?: boolean;
 
   constructor(values?: any) {
     if (values) {

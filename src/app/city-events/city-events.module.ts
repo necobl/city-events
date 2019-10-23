@@ -8,6 +8,7 @@ import {CityEventsService} from './services/city-events.service';
 import {EventsCategoryComponent} from './events-category/events-category.component';
 import {EventsCreateComponent} from './events-create/events-create.component';
 import {EventsListComponent} from './events-list/events-list.component';
+import {CityEventsCategoryService} from './services/city-events-category.service';
 
 
 @NgModule({
@@ -33,6 +34,6 @@ import {EventsListComponent} from './events-list/events-list.component';
     EventCardComponent,
     EventsCreateComponent
   ],
-  providers: [CityEventsService]
+  providers: [CityEventsService, CityEventsCategoryService]
 })
-export class AuthModule { }
+export class CityEventsModule { }
