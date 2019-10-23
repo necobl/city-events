@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MasterComponent } from './master.component';
 import {MasterRoutingModule} from './master-routing.module';
+import {AppMaterialModule} from '../app-material/app-material.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 
@@ -9,7 +11,10 @@ import {MasterRoutingModule} from './master-routing.module';
   declarations: [MasterComponent],
   imports: [
     CommonModule,
-    MasterRoutingModule
+    MasterRoutingModule,
+    AppMaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class MasterModule { }
