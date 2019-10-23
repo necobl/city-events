@@ -9,6 +9,7 @@ export class CityEventModel {
   description: string;
   eventDate: Date;
   imageUrl: string;
+  finished: boolean;
 
   constructor(values?: any) {
     if (values) {
