@@ -1,6 +1,6 @@
 import {UtilService} from '../services/util.service';
 
-export class AppUserModel {
+export class AppUser {
   id: string;
   firstName: string;
   lastName: string;
