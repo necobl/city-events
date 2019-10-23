@@ -1,9 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource, MatSort, MatDialog } from '@angular/material';
-import { EventService } from 'src/app/event.service';
-import { EventsCreateComponent } from '../events-create/events-create.component';
-import { CloseEventsComponent } from '../close-events/close-events.component';
-import { Event } from 'src/app/model/event.model';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {MatTableDataSource, MatSort, MatDialog} from '@angular/material';
+import {CityEventsService} from 'src/app/city-events/services/city-events.service';
+import {EventsCreateComponent} from '../events-create/events-create.component';
+import {CloseEventsComponent} from '../close-events/close-events.component';
+import {CityEvent} from '../../core/models/city-event.model';
 
 @Component({
   selector: 'app-events-list',
@@ -12,13 +12,13 @@ import { Event } from 'src/app/model/event.model';
 })
 export class EventsListComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'description', 'dueDate', 'time', 'active', 'close', 'delete'];
-  dataSource = new MatTableDataSource<Event>();
-  @ViewChild(MatSort, { static: true }) sort: MatSort;
-  
+  displayedColumns: string[] = ['name', 'description', 'eventDate', 'close', 'delete'];
+  dataSource = new MatTableDataSource<CityEvent>();
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor(private service: EventService,
-    private dialog: MatDialog) {
+
+  constructor(private service: CityEventsService,
+              private dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -36,11 +36,8 @@ export class EventsListComponent implements OnInit {
       });
   }
 
-  
 
-  
-
-  closeEvent(element) {
+  deleteEvent(element) {
     this.dialog.open(CloseEventsComponent, {
       width: '600px',
       data: {

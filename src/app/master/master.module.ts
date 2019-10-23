@@ -4,6 +4,7 @@ import { MasterComponent } from './master.component';
 import {MasterRoutingModule} from './master-routing.module';
 import {AppMaterialModule} from '../app-material/app-material.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HomeModule} from '../home/home.module';
 
 
 
@@ -14,7 +15,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MasterRoutingModule,
     AppMaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HomeModule
   ]
 })
 export class MasterModule { }

@@ -1,7 +1,7 @@
 import {UtilService} from '../services/util.service';
 import {CityEventCategory} from './city-event-category.model';
 
-export class CityEventModel {
+export class CityEvent {
   id: string;
   categoryId: string;
   // category: CityEventCategory;
