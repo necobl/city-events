@@ -22,6 +22,7 @@ export class CategoriesListComponent implements OnInit {
 
   ngOnInit() {
     this.loadCityEventCategories();
+    this.dataSource.sort = this.sort;
   }
 
   loadCityEventCategories() {

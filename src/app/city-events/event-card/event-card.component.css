@@ -1,5 +1,6 @@
 .event-card {
     max-width: 400px;
+    
   }
   
   .event-header-image {
@@ -7,3 +8,4 @@
     background-size: cover;
     
   }
+  
