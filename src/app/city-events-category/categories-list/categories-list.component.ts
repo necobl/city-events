@@ -3,6 +3,7 @@ import {MatTableDataSource, MatDialog, MatSort,} from '@angular/material';
 import {CityEventCategory} from 'src/app/core/models/city-event-category.model';
 import {CityEventsCategoryService} from '../../core/services/city-events-category.service';
 import {CategoryManageComponent} from '../category-manage/category-manage.component';
+import { CategoryDeleteComponent } from '../category-delete/category-delete.component';
 
 @Component({
   selector: 'app-categories-list',
@@ -49,7 +50,18 @@ export class CategoriesListComponent implements OnInit {
         this.loadCityEventCategories();
       });
   }
-
+  deleteCategory(element) {
+    this.dialog.open(CategoryDeleteComponent, {
+      width: '600px',
+      data: {
+        task: element
+      }
+    })
+      .afterClosed()
+      .subscribe(result => {
+        this.loadCityEventCategories();
+      });
+  }
 
 }
 

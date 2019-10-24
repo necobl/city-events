@@ -4,14 +4,17 @@ import { CategoriesListComponent } from './categories-list/categories-list.compo
 import { AppMaterialModule } from '../app-material/app-material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoryManageComponent } from './category-manage/category-manage.component';
+import { CategoryDeleteComponent } from './category-delete/category-delete.component';
 
 
 
 @NgModule({
   declarations: [CategoriesListComponent,
-    CategoryManageComponent
+    CategoryManageComponent,
+    CategoryDeleteComponent
   ],
   entryComponents:[
+  CategoryDeleteComponent,
    CategoryManageComponent
   ],
   imports: [
