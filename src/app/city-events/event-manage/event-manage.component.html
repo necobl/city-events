@@ -2,16 +2,28 @@
 <form [formGroup]="form">
   <div mat-dialog-content class="create-form">
     <mat-form-field>
-      <input matInput placeholder="Naziv" required formControlName="name" autocomplete="off"/>
+      <input matInput placeholder="Naziv" required formControlName="name" autocomplete="off" />
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Opis" required formControlName="description" autocomplete="off"/>
+      <input matInput placeholder="Opis" required formControlName="description" autocomplete="off" />
     </mat-form-field>
     <mat-form-field>
       <input matInput [matDatepicker]="picker" placeholder="Datum" formControlName="eventDate">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
+
+    
+      <mat-form-field>
+        <mat-label>Izaberi kategoriju</mat-label>
+        <mat-select required  formControlName="categoryId" >
+          <mat-option *ngFor="let cityEventCategory of cityEventCategories" [value]="cityEventCategory.id">
+            {{cityEventCategory.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+
   </div>
   <div mat-dialog-actions>
     <button mat-button (click)="close()">Odustani</button>
