@@ -27,6 +27,20 @@ export class CityEventsService {
     return this.cityEvents;
   }
 
+  public filterEvents(searchDate, categoryId?: string): Array<CityEvent> {
+    const filtered: Array<CityEvent> = [];
+    this.cityEvents.forEach((item) => {
+      if (item.eventDate >= searchDate) {
+        if (categoryId && item.categoryId === categoryId) {
+          filtered.push(item);
+        } else if (!categoryId) {
+          filtered.push(item);
+        }
+      }
+    });
+    return filtered;
+  }
+
   public addEvent(cityEvent: CityEvent) {
     this.cityEvents.push(cityEvent);
     this.save();
