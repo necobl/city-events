@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {MatTableDataSource,} from '@angular/material';
-import {CityEventCategory} from 'src/app/core/models/city-event-category.model';
-import {CityEventsCategoryService} from '../../core/services/city-events-category.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource, MatDialog, MatSort, } from '@angular/material';
+import { CityEventCategory } from 'src/app/core/models/city-event-category.model';
+import { CityEventsCategoryService } from '../../core/services/city-events-category.service';
+import { CategoryManageComponent } from '../category-manage/category-manage.component';
 
 @Component({
   selector: 'app-categories-list',
@@ -10,10 +11,11 @@ import {CityEventsCategoryService} from '../../core/services/city-events-categor
 })
 export class CategoriesListComponent implements OnInit {
 
-  displayedColumns: string[] = ['categoriy', 'edit', 'delete'];
+  displayedColumns: string[] = ['name', 'edit', 'delete'];
   dataSource = new MatTableDataSource<CityEventCategory>();
-
-  constructor(private service: CityEventsCategoryService) {
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
+  constructor(private service: CityEventsCategoryService,
+    private dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -22,4 +24,30 @@ export class CategoriesListComponent implements OnInit {
   loadCityEventCategory() {
     this.dataSource.data = this.service.getCategories();
   }
+  addCategory() {
+    this.dialog.open(CategoryManageComponent, {
+      width: '600px'
+    })
+      .afterClosed()
+      .subscribe(result => {
+        this.loadCityEventCategory();
+      });
+  }
+  editCategory(cityEventCategory) {
+    this.dialog.open(CategoryManageComponent, {
+      width: '600px',
+      data: {
+        cityEventCategory: cityEventCategory
+      }
+    })
+      .afterClosed()
+      .subscribe(result => {
+        this.loadCityEventCategory();
+      });
+  }
+
+
+
+
 }
+
