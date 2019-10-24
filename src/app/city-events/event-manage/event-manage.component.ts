@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
-import {CityEventsService} from 'src/app/city-events/services/city-events.service';
+import {CityEventsService} from 'src/app/core/services/city-events.service';
 import {MatSnackBar, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {CityEvent} from '../../core/models/city-event.model';
 

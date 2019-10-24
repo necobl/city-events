@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CityEventsService} from '../city-events/services/city-events.service';
+import {CityEventsService} from '../core/services/city-events.service';
 import {CityEvent} from '../core/models/city-event.model';
 
 @Component({

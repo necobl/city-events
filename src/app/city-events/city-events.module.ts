@@ -4,10 +4,8 @@ import { AppMaterialModule } from '../app-material/app-material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {CloseEventsComponent} from './close-events/close-events.component';
 import {EventCardComponent} from './event-card/event-card.component';
-import {CityEventsService} from './services/city-events.service';
 import {EventManageComponent} from './event-manage/event-manage.component';
 import {EventsListComponent} from './events-list/events-list.component';
-import {CityEventsCategoryService} from './services/city-events-category.service';
 
 
 @NgModule({
@@ -32,6 +30,6 @@ import {CityEventsCategoryService} from './services/city-events-category.service
     EventCardComponent,
     EventManageComponent
   ],
-  providers: [CityEventsService, CityEventsCategoryService]
+  providers: []
 })
 export class CityEventsModule { }

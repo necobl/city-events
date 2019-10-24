@@ -1,5 +1,5 @@
 import {Component, OnInit, Inject} from '@angular/core';
-import {CityEventsService} from 'src/app/city-events/services/city-events.service';
+import {CityEventsService} from 'src/app/core/services/city-events.service';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {CityEvent} from '../../core/models/city-event.model';
 

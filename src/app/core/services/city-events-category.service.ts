@@ -1,9 +1,11 @@
-import {LocalStorageService} from '../../core/services/local-storage.service';
-import {CityEventCategory} from '../../core/models/city-event-category.model';
+import {LocalStorageService} from './local-storage.service';
+import {CityEventCategory} from '../models/city-event-category.model';
 import {Injectable} from '@angular/core';
-import {CityEvent} from '../../core/models/city-event.model';
+import {CityEvent} from '../models/city-event.model';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class CityEventsCategoryService {
   private cityEventCategories: Array<CityEventCategory> = [];
 

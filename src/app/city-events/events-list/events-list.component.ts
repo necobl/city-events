@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatTableDataSource, MatSort, MatDialog} from '@angular/material';
-import {CityEventsService} from 'src/app/city-events/services/city-events.service';
+import {CityEventsService} from 'src/app/core/services/city-events.service';
 import {EventManageComponent} from '../event-manage/event-manage.component';
 import {CloseEventsComponent} from '../close-events/close-events.component';
 import {CityEvent} from '../../core/models/city-event.model';

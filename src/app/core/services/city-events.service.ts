@@ -1,9 +1,11 @@
 import {Injectable} from '@angular/core';
-import {CityEvent} from '../../core/models/city-event.model';
-import {LocalStorageService} from '../../core/services/local-storage.service';
+import {CityEvent} from '../models/city-event.model';
+import {LocalStorageService} from './local-storage.service';
 import {CityEventsCategoryService} from './city-events-category.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class CityEventsService {
 
   private cityEvents: Array<CityEvent> = [];
