@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource,  } from '@angular/material';
-import { CityEventCategory } from 'src/app/core/models/city-event-category.model';
+import {Component, OnInit} from '@angular/core';
+import {MatTableDataSource,} from '@angular/material';
+import {CityEventCategory} from 'src/app/core/models/city-event-category.model';
+import {CityEventsCategoryService} from '../../core/services/city-events-category.service';
 
 @Component({
   selector: 'app-categories-list',
@@ -8,15 +9,17 @@ import { CityEventCategory } from 'src/app/core/models/city-event-category.model
   styleUrls: ['./categories-list.component.css']
 })
 export class CategoriesListComponent implements OnInit {
-  
-  displayedColumns: string[] = ['categorie', 'edit' , 'delete'];
+
+  displayedColumns: string[] = ['categoriy', 'edit', 'delete'];
   dataSource = new MatTableDataSource<CityEventCategory>();
 
-  constructor() { }
+  constructor(private service: CityEventsCategoryService) {
+  }
 
   ngOnInit() {
   }
+
   loadCityEventCategory() {
-    this.dataSource.data = this.service.getEvents();
+    this.dataSource.data = this.service.getCategories();
   }
 }
