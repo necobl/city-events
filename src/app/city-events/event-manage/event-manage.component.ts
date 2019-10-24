@@ -40,11 +40,11 @@ export class EventManageComponent implements OnInit {
 
   save({value, valid}: { value: CityEvent, valid: boolean }) {
     if (valid) { // ako su OK
-
+      Object.assign(this.cityEvent, value);
       if (this.isEdit) {
-        this.service.editEvent(value);
+        this.service.editEvent(this.cityEvent);
       } else {
-        this.service.addEvent(value); // koristimo nas servis da ih sacuvamo
+        this.service.addEvent(this.cityEvent); // koristimo nas servis da ih sacuvamo
       }
 
       this.form.reset(); // ponistimo prethodno unesene podatke

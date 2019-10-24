@@ -1,8 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource, MatDialog, MatSort, } from '@angular/material';
-import { CityEventCategory } from 'src/app/core/models/city-event-category.model';
-import { CityEventsCategoryService } from '../../core/services/city-events-category.service';
-import { CategoryManageComponent } from '../category-manage/category-manage.component';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {MatTableDataSource, MatDialog, MatSort,} from '@angular/material';
+import {CityEventCategory} from 'src/app/core/models/city-event-category.model';
+import {CityEventsCategoryService} from '../../core/services/city-events-category.service';
+import {CategoryManageComponent} from '../category-manage/category-manage.component';
 
 @Component({
   selector: 'app-categories-list',
@@ -14,25 +14,29 @@ export class CategoriesListComponent implements OnInit {
   displayedColumns: string[] = ['name', 'edit', 'delete'];
   dataSource = new MatTableDataSource<CityEventCategory>();
   @ViewChild(MatSort, {static: true}) sort: MatSort;
+
   constructor(private service: CityEventsCategoryService,
-    private dialog: MatDialog) {
+              private dialog: MatDialog) {
   }
 
   ngOnInit() {
+    this.loadCityEventCategories();
   }
 
-  loadCityEventCategory() {
+  loadCityEventCategories() {
     this.dataSource.data = this.service.getCategories();
   }
+
   addCategory() {
     this.dialog.open(CategoryManageComponent, {
       width: '600px'
     })
       .afterClosed()
       .subscribe(result => {
-        this.loadCityEventCategory();
+        this.loadCityEventCategories();
       });
   }
+
   editCategory(cityEventCategory) {
     this.dialog.open(CategoryManageComponent, {
       width: '600px',
@@ -42,11 +46,9 @@ export class CategoriesListComponent implements OnInit {
     })
       .afterClosed()
       .subscribe(result => {
-        this.loadCityEventCategory();
+        this.loadCityEventCategories();
       });
   }
-
-
 
 
 }
