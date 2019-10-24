@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
@@ -21,7 +22,8 @@ registerLocaleData(en);
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    FlexLayoutModule
   ],
   entryComponents: [
   ],

@@ -29,17 +29,38 @@ export class CityEventsService {
     return this.cityEvents;
   }
 
-  public filterEvents(searchDate, categoryId?: string): Array<CityEvent> {
+  getTodayEvents(): Array<CityEvent> {
+    const today = new Date();
+    return this.cityEvents.filter((item) => {
+      const d = new Date(item.eventDate);
+      return (item.eventDate &&
+        d.getDay() === today.getDay() &&
+        d.getMonth() === today.getMonth() &&
+        d.getFullYear() === today.getFullYear());
+    });
+  }
+
+  getUpcomingEvents(categoryId?: string): Array<CityEvent> {
+    const today = new Date();
     const filtered: Array<CityEvent> = [];
+
     this.cityEvents.forEach((item) => {
-      if (item.eventDate >= searchDate) {
-        if (categoryId && item.categoryId === categoryId) {
-          filtered.push(item);
-        } else if (!categoryId) {
+      const d = new Date(item.eventDate);
+      if (item.eventDate &&
+        d.getDay() > today.getDay() &&
+        d.getMonth() >= today.getMonth() &&
+        d.getFullYear() >= today.getFullYear()) {
+
+        if (categoryId) {
+          if (item.categoryId === categoryId) {
+            filtered.push(item);
+          }
+        } else {
           filtered.push(item);
         }
       }
     });
+
     return filtered;
   }
 

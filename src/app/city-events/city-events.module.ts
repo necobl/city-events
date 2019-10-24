@@ -7,6 +7,7 @@ import {EventCardComponent} from './event-card/event-card.component';
 import {EventManageComponent} from './event-manage/event-manage.component';
 import {EventsListComponent} from './events-list/events-list.component';
 import {NgZorroAntdModule} from 'ng-zorro-antd';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {NgZorroAntdModule} from 'ng-zorro-antd';
     AppMaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    FlexLayoutModule
   ],
   exports: [
     CloseEventsComponent,
