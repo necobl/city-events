@@ -1,13 +1,13 @@
 
 p{  
-   font-size: 10px;
+   font-size: 14px;
    text-align: center;
 
 }
 
 @media(max-width:425px){
     p{
-      font-size: 8px;
+      font-size: 14px;
       width: 88px;
       top: 50%;
       right: 0;

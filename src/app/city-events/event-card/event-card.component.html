@@ -1,15 +1,13 @@
-<mat-card >
-
-  <img mat-card-lg-image src='{{cityEvent?.imageUrl}}' alt="Banja Luka"  />
-  <mat-card-title class="card-title">{{cityEvent?.name}}</mat-card-title>
-
+<mat-card class="event-card">
+  <img mat-card-image src='{{cityEvent?.imageUrl}}' class="img-card" />
+  <mat-card-title class="event-card-title">{{cityEvent?.name}}</mat-card-title>
   <mat-card-content class="card-content">
     <p>
       {{cityEvent?.description}}
     </p>
   </mat-card-content>
   <mat-card-actions class="card-actions">
-    <p>{{cityEvent?.eventDate | date:'dd.MM.yyyy  HH:mm'}}</p>
+    <p>{{cityEvent?.eventDate | date:'dd.MM.yyyy HH:mm'}}</p>
 
   </mat-card-actions>
 </mat-card>
