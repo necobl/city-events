@@ -1,16 +1,29 @@
-<div fxLayout="row">
-  <div fxFlex="25%" class="border-test">
-    <app-weather></app-weather>
+<div fxLayout="row ">
+  <div fxFlex="75%" class="advertisement-box">
+    <img src="../../assets/img/cola.png" width="681px" height="100px">
   </div>
-  <div fxFlex="75%" class="border-test">Reklama</div>
+  <div fxFlex="25%" class="advertisement-box" ><app-weather ></app-weather></div>
 </div>
-<h1>Danasnji</h1>
-{{todayEvents | json}}
+
 <hr/>
-<h1>Predstojeci</h1>
-<div class="category-select">
+<h1 class="events-Heading">Danasnji</h1>
+<div fxLayout="row wrap"
+     fxLayout.lt-sm="column"
+     fxLayoutGap="0px"
+     fxLayoutAlign="flex-start">
+  <div *ngFor="let item of todayEvents"
+       fxFlex="0 1  calc(33.3% - 32px)"
+       fxFlex.lt-md="0 1  calc(50% - 32px)"
+       fxFlex.lt-sm="100%" class="eventsCard">
+    <app-event-card [cityEvent]="item"></app-event-card>
+  </div>
+</div>
+
+<hr/>
+<h1 class="events-Heading">Predstojeci</h1>
+<div class="events-Heading">
   <mat-form-field>
-    <mat-label>Izaberi kategoriju</mat-label>
+    <mat-label>Kategorija</mat-label>
     <mat-select [(ngModel)]="cityEventCategoryId" (selectionChange)="onCategoryChanged($event)">
       <mat-option *ngFor="let cityEventCategory of cityEventCategories" [value]="cityEventCategory.id">
         {{cityEventCategory.name}}
@@ -21,12 +34,12 @@
 
 <div fxLayout="row wrap"
      fxLayout.lt-sm="column"
-     fxLayoutGap="32px"
-     fxLayoutAlign="flex-start">>
+     fxLayoutGap="0px"
+     fxLayoutAlign="flex-start">
   <div *ngFor="let item of upcomingEvents"
        fxFlex="0 1 calc(33.3% - 32px)"
        fxFlex.lt-md="0 1 calc(50% - 32px)"
-       fxFlex.lt-sm="100%">
+       fxFlex.lt-sm="100%" class="eventsCard">
     <app-event-card [cityEvent]="item"></app-event-card>
   </div>
 </div>

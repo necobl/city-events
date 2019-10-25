@@ -2,13 +2,8 @@
     max-width: 400px;
   }
 
-  .event-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-
+ .card-actions{
+    text-align: center;
   }
-
-  img.event_img {
-   /* height: 100%;
-    width: 100%;*/
-  }
+ 
+  
