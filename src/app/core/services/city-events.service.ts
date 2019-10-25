@@ -102,18 +102,49 @@ export class CityEventsService {
       const category = categories[0];
       const items = [
         {
-          name: 'Test event 1',
+          name: 'NOĆNI KLUB DRAMA',
           categoryId: category.id,
-          description: 'test test test',
-          eventDate: new Date(Date.now() + 86400000),
-          imageUrl: 'https://r3.whistleout.com/public/images/articles/2016/12/NEWYORKCITY.jpg'
+          description: 'GRAND OPENING - WE ARE THE 90S',
+          eventDate: new Date(Date.now()),
+          imageUrl: 'https://www.banjaluka-tourism.com/images/Kafici_/drama.jpg'
         },
         {
-          name: 'Test event 2',
+          name: 'NOĆNI KLUB OPIUM',
           categoryId: category.id,
-          description: 'test test test',
-          eventDate: new Date(Date.now() + 186400000)
+          description: 'IVANA BOJANOVIĆ I BALKAN BEAT BEND',
+          eventDate: new Date(Date.now()),
+          imageUrl: 'https://www.banjaluka-tourism.com/images/Kafici_/opium.jpg'
+        },
+        {
+          name: 'NOĆNI KLUB KABINET',
+          categoryId: category.id,
+          description: 'DJ DAMJAN ELTECH (MASH UP) NIGHTS',
+          eventDate: new Date(Date.now()),
+          imageUrl: 'https://www.banjaluka-tourism.com/images/Kafici_/Kabinet.jpg'
+        },
+        {
+          name: 'NOĆNI KLUB KRISTAL',
+          categoryId: category.id,
+          description: 'GRAND OPENING - WE ARE THE 90S',
+          eventDate: new Date(Date.now() + 87506600 ),
+          imageUrl: 'https://www.banjaluka-tourism.com/images/Kafici_/kristal.jpg'
+        },
+        {
+          name: 'NOĆNI KLUB KSB',
+          categoryId: category.id,
+          description: 'DJ DAMJAN ELTECH (MASH UP) NIGHTS',
+          eventDate: new Date(Date.now() + 88006600),
+          imageUrl: 'https://www.banjaluka-tourism.com/images/Kafici_/ksb.jpg'
+        },
+        {
+          name: 'NOĆNI KLUB VENECIJA',
+          categoryId: category.id,
+          description: 'IVANA BOJANOVIĆ I BALKAN BEAT BEND',
+          eventDate: new Date(Date.now() + 90006600),
+          imageUrl: 'https://www.banjaluka-tourism.com/images/Kafici_/venecija.jpg'
         }
+        
+        
       ];
       items.forEach((item) => {
         this.cityEvents.push(new CityEvent(item));

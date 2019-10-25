@@ -30,8 +30,8 @@
 }
 
 .menu-item:hover {
-  background-color: rgb(111, 105, 126);
-  color: white !important;
+  background-color: lightgray;
+  color:black !important;
   cursor: pointer;
 }
 
