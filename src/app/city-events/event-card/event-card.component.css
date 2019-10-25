@@ -1,9 +1,13 @@
 .event-card {
-    max-width: 400px;
+    max-width: 300px;
   }
-
+.img-card{
+  max-height: 150px;
+}
  .card-actions{
     text-align: center;
   }
  
-  
+ .event-card-title{
+   padding-top: 8px;
+ } 
