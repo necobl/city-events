@@ -43,7 +43,8 @@ this.cityEventCategories = this.cityEventCategoriesService.getCategories();
       name: [this.cityEvent.name, Validators.required],
       description: [this.cityEvent.description, Validators.required],
       eventDate: [this.cityEvent.eventDate],
-      categoryId: [this.cityEvent.categoryId,Validators.required]
+      categoryId: [this.cityEvent.categoryId,Validators.required],
+      imageUrl:[this.cityEvent.imageUrl]
       
     });
   }
