@@ -41,22 +41,25 @@ export class CityEventsService {
   }
 
   getUpcomingEvents(categoryId?: string): Array<CityEvent> {
-    const today = new Date();
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+
     const filtered: Array<CityEvent> = [];
 
     this.cityEvents.forEach((item) => {
-      const d = new Date(item.eventDate);
-      if (item.eventDate &&
-        d.getDay() > today.getDay() &&
-        d.getMonth() >= today.getMonth() &&
-        d.getFullYear() >= today.getFullYear()) {
+      if (item.eventDate) {
+        const d = new Date(item.eventDate);
+        if (d >= tomorrow) {
 
-        if (categoryId) {
-          if (item.categoryId === categoryId) {
+          if (categoryId) {
+            if (item.categoryId === categoryId) {
+              filtered.push(item);
+            }
+          } else {
             filtered.push(item);
           }
-        } else {
-          filtered.push(item);
         }
       }
     });
