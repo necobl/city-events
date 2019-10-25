@@ -14,17 +14,17 @@
     <mat-list class="menu">
       <mat-list-item class="menu-item" routerLink="/">
         <mat-icon mat-list-icon>home</mat-icon>
-        <p>Početna</p>
+        <p style="margin-bottom: 0;">Početna</p>
       </mat-list-item>
       <ng-container *ngIf="adminRoute">
         <mat-list-item class="menu-item" routerLink="/admin">
           <mat-icon mat-list-icon>notes</mat-icon>
-          <p>Događaji</p>
+          <p style="margin-bottom: 0;">Događaji</p>
         </mat-list-item>
 
         <mat-list-item class="menu-item" routerLink="/admin/categories">
           <mat-icon mat-list-icon>image</mat-icon>
-          <p>Kategorije</p>
+          <p style="margin-bottom: 0;">Kategorije</p>
         </mat-list-item>
       </ng-container>
 
